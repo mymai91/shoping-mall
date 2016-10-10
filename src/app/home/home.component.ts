@@ -21,9 +21,10 @@ import { XLarge } from './x-large';
 export class Home {
   // Set our default values
   localState = { value: '' };
+  todos: string[];
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
-
+    this.todos = ['product 1', 'product 2', 'product 3', 'product 4', 'product 5'];
   }
 
   ngOnInit() {
