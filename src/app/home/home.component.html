@@ -38,4 +38,12 @@
 
   </div>
 
+  <h3>The first time use ngFor in Angular2</h3>
+  <ul>
+    <!-- The * character allows you to
+         - remove the template element
+         - put the directive directly on the root of the template element  -->
+    <li *ngFor="let todo of todos">{{todo}}</li>
+  </ul>
+
 </div>
