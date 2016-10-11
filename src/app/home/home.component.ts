@@ -29,6 +29,7 @@ interface Product {
 export class Home {
   // Set our default values
   localState = { value: '' };
+  product = { name: '' };
   products: Product[] = [{
     name: 'product 1',
     expired: false
@@ -41,8 +42,7 @@ export class Home {
   },{
     name: 'product 4',
     expired: true
-  }
-];
+  }];
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
 
@@ -57,5 +57,13 @@ export class Home {
     console.log('submitState', value);
     this.appState.set('value', value);
     this.localState.value = '';
+  }
+
+  updateExpired(i) {
+    console.log(i);
+  }
+
+  addProduct(p) {
+    console.log(p);
   }
 }

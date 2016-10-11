@@ -39,13 +39,20 @@
   </div>
 
   <h3>The first time use ngFor in Angular2</h3>
+
+  <p>
+    Add a new product
+    <input placeholder="Product's name" type="text" [value]="product.name">
+    <button (click)="addProduct(product)">Add product</button>
+  </p>
   <ul>
     <!-- The * character allows you to
          - remove the template element
          - put the directive directly on the root of the template element  -->
-    <li *ngFor="let product of products">
-      Name: {{product.name}}
-      Expired: {{product.expired}}
+    <li *ngFor="let product of products, let i = index">
+      <!-- []: use for bind data -->
+      <!-- (): event handle on element -->
+      Name: {{product.name}} -- Expired: <input type="checkbox" [checked]="product.expired" (change)="updateExpired(i)">
     </li>
   </ul>
 
