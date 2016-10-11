@@ -43,7 +43,10 @@
     <!-- The * character allows you to
          - remove the template element
          - put the directive directly on the root of the template element  -->
-    <li *ngFor="let todo of todos">{{todo}}</li>
+    <li *ngFor="let product of products">
+      Name: {{product.name}}
+      Expired: {{product.expired}}
+    </li>
   </ul>
 
 </div>
