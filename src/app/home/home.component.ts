@@ -4,6 +4,12 @@ import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
 
+// Define a object type for project via interface
+interface Product {
+  name: string;
+  expired: boolean;
+}
+
 @Component({
   // The selector is what angular internally uses
   // for `document.querySelectorAll(selector)` in our index.html
@@ -18,13 +24,28 @@ import { XLarge } from './x-large';
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
+
+
 export class Home {
   // Set our default values
   localState = { value: '' };
-  todos: string[];
+  products: Product[] = [{
+    name: 'product 1',
+    expired: false
+  },{
+    name: 'product 2',
+    expired: true
+  },{
+    name: 'product 3',
+    expired: false
+  },{
+    name: 'product 4',
+    expired: true
+  }
+];
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
-    this.todos = ['product 1', 'product 2', 'product 3', 'product 4', 'product 5'];
+
   }
 
   ngOnInit() {
